@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TALENT - ATIVIDADE DE PAÍSES</title>
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul>
+                <li>MENU</li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+        <section>
+            <h1>Europa - turismo </h1>
+            <h2>TORRE EIFFEL</h2>
+                <figure>
+                    <img src="img\torre.png" alt="torre" width="250px">
+                    <figcaption>Localizada em PARIS, é uma das maiores torres do mundo</figcaption>
+                  </figure>
+            <h2>PASSEIO DE BARCO AMSTERDÃ</h2>
+                <figure>
+                    <img src="img\amsterda.png" alt="barco" width="250px">
+                    <figcaption>Localizada em amsterda, é uma das maiores atrações da localidade</figcaption>
+                  </figure>
+            <h2>CASTELO EM ALEMANHA</h2>
+                <figure>
+                    <img src="img\castel.png" alt="castel" width="250px">
+                    <figcaption>Localizada na ALEMANHA, é um dos maiores do mundo</figcaption>
+                  </figure>
+
+        </section>
+
+    </main>
+    <footer>
+        <h2>Rodape</h2>
+    </footer>
+</body>
+</html>
