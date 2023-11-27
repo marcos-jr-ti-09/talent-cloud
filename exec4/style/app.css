@@ -1,0 +1,17 @@
+header {
+  background-color: rgb(150, 136, 167);
+  width: 100%;
+  text-align: center;
+}
+
+section {
+  background-color: rgb(184, 179, 189);
+  width: 100%;
+  text-align: center;
+}
+
+footer {
+  background-color: rgb(150, 136, 167);
+  width: 100%;
+  text-align: center;
+}
