@@ -1,0 +1,11 @@
+CREATE TRIGGER `Tgr_qtd_profissionais` AFTER INSERT ON `usuario`
+ FOR EACH ROW BEGIN
+	UPDATE profissao SET per_qtd_usuario = per_qtd_usuario + 1
+WHERE NEW.usu_id_per = per_id;
+END
+
+CREATE TRIGGER `Tgr_qtd_profissionais_Delete` AFTER DELETE ON `usuario`
+ FOR EACH ROW BEGIN
+	UPDATE profissao SET per_qtd_usuario = per_qtd_usuario - 1
+WHERE OLD.usu_id_per = per_id;
+END
