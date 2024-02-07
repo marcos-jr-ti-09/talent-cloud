@@ -1,0 +1,34 @@
+create database profissao
+use profissao
+
+CREATE TABLE `profissao` (
+  `per_id` int(5) NOT NULL auto_increment,
+  `per_titulo` varchar(80) default NULL,
+  `per_desc` text,  
+  PRIMARY KEY  (`per_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `usuario` (
+  `usu_id` int(8) NOT NULL auto_increment,
+  `usu_id_per` int(8) NOT NULL,
+  `usu_nome` varchar(50) NOT NULL,
+  `usu_login` varchar(20) default NULL,
+  `usu_email` varchar(50) NOT NULL,
+  `usu_senha` varchar(32) NOT NULL,
+  PRIMARY KEY  (`usu_id`),
+  UNIQUE KEY `usu_email` (`usu_email`),
+  UNIQUE KEY `usu_login` (`usu_login`),
+  KEY `usu_id_per` (`usu_id_per`),
+  CONSTRAINT `ligacao_fk` FOREIGN KEY (`usu_id_per`) REFERENCES `profissao` (`per_id`) ON DELETE CASCADE ON UPDATE NO ACTION
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `profissao`.`profissao` ( `per_titulo`, `per_desc`) VALUES ('Programador', 'Realiza a programacao da aplicacao');
+INSERT INTO `profissao`.`profissao` ( `per_titulo`, `per_desc`) VALUES ('Analista', 'Realiza a analise da aplicacao');
+INSERT INTO `profissao`.`profissao` ( `per_titulo`, `per_desc`) VALUES ('Administrador de banco de dados', 'Realiza o bd da aplicacao');
+
+INSERT INTO `profissao`.`usuario` (`usu_id_per`, `usu_nome`, `usu_login`, `usu_email`, `usu_senha`) VALUES ('1', 'Gil mendes', 'gigi@gmail.com', 'gigi@gmail.com', '123456'), ('2', 'gustavo melhor', 'guga@guga.com', 'guga@gmail.com', '123456');
+
+-------------join
+select * from profissao left join usuario on usuario.usu_id_per = profissao.per_id 
+select * from profissao right join usuario on usuario.usu_id_per = profissao.per_id 
