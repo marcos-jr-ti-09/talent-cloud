@@ -2,7 +2,8 @@ DELIMITER $$
 
 CREATE PROCEDURE Selecionar_Produtos_comprados(IN quantidade INT)
 BEGIN
-SELECT * FROM PRODUTOS
+SELECT SUM(qtd_item_produto) FROM VENDAS
+WHERE  CAST(data_compra AS DATE) = CAST(GETDATE() AS DATE)
 LIMIT quantidade;
 END $$
 DELIMITER ;
