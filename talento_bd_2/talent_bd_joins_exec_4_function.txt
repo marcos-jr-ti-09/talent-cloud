@@ -1,0 +1,8 @@
+CREATE FUNCTION mostra_cadastrados (data_referencia DATE)
+ RETURNS INT(SIZE)
+ NOT DETERMINISTIC
+ BEGIN
+  DECLARE qtd VARCHAR(SIZE);
+  SET qtd = (SELECT COUNT(*) FROM clientes WHERE data_de_cadastro = data_referencia);
+  RETURN qtd;
+ END$$
